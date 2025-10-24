@@ -174,14 +174,14 @@ class Mixtype {
     LATIN: '[A-Za-zÀ-ÖØ-žſ-ʯЀ-ԯ]',
     NUMBER: '[0-9]',
     HANGUL: '[ㄱ-ㅎㅏ-ㅣ가-힣ㅥ-ㆎ]',
+    HANJA: '[⺀-⿕㐀-䶵一-鿦豈-龎]',
+    GANA: '[ぁ-ヿㇰ-ㇿ]',
     /* 작업중 */
     LATIN_PUNCT: '[?!]',
     HANGUL_PUNCT: '[.]',
     BRACKETS: '[(){}[]]',
     HANGUL_BRACKETS: '[《》〈〉「」『』【】〔〕]',
     MATH_SYMBOLS: '[+−×·<>=]',
-    HANJA: '[⺀-⿕㐀-䶵一-鿦豈-龎]',
-    GANA: '[ぁ-ヿㇰ-ㇿ]',
   };
 }
 

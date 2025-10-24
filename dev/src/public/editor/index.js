@@ -140,6 +140,8 @@ const matcherOptions = {
   로마자: Mixtype.Preset.LATIN,
   숫자: Mixtype.Preset.NUMBER,
   한글: Mixtype.Preset.HANGUL,
+  한자: Mixtype.Preset.HANJA,
+  가나: Mixtype.Preset.GANA,
 };
 function getMatcherOption(name, value, selected = false, disabled = false) {
   const option = document.createElement('option');
@@ -150,7 +152,6 @@ function getMatcherOption(name, value, selected = false, disabled = false) {
 }
 function getMatcherSelect(input) {
   const select = document.createElement('select');
-  select.appendChild(getMatcherOption('선택', 'select', true, true));
   select.appendChild(getMatcherOption('사용자 지정', 'custom'));
   for (const name in matcherOptions) {
     select.appendChild(getMatcherOption(name, matcherOptions[name]));
