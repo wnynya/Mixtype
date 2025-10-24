@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 3rem;
+        font-family: 'Suisse Intl';
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      p {
+        margin: 0;
+      }
+
+      .display {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+        overflow-y: scroll;
+      }
+      .display > .guide,
+      .display > .text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 4rem;
+      }
+
+      .display > .guide.lineheight > .line {
+        border-bottom: solid 1px red;
+      }
+      .display > .guide.baseline > .line {
+        border-bottom: solid 1px blue;
+      }
+      [mts] {
+        border-top: solid 1px rgb(0, 255, 0);
+        border-bottom: solid 1px rgb(0, 255, 0);
+      }
+
+      .inputset {
+        display: flex;
+      }
+      .inputset .label {
+        width: 6rem;
+      }
+      .inputset .value {
+        width: 6rem;
+      }
+      .inputset input {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="display">
+      <div class="guide baseline"></div>
+      <div class="guide lineheight"></div>
+      <div class="text">
+        <p id="display-text"></p>
+      </div>
+    </div>
+
+    <div class="inputset" id="font-size">
+      <p class="label">font-size</p>
+      <p class="value"></p>
+      <input type="range" min="6" max="300" value="36" step="0.1" />
+    </div>
+
+    <div class="inputset" id="line-height">
+      <p class="label">line-height</p>
+      <p class="value"></p>
+      <input type="range" min="20" max="500" value="160" step="1" />
+    </div>
+
+    <textarea id="sample">
+      테스트 문구 Example Text 1234 (2Hix가@)
+      (다음 줄) Newline 1234#
+      한글만 있는 줄
+      Line with English only
+      또 다른 줄 Test
+    </textarea>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mixtype 편집기</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main id="main">
+      <div id="mixtype">
+        <div class="title">
+          <div class="name">Mixtype 편집기</div>
+          <div class="buttons">
+            <button id="button-copy-code">코드 복사</button>
+            <button id="button-copy-settings">설정 복사</button>
+            <button id="button-export-settings">설정 내보내기</button>
+            <button id="button-import-settings">설정 불러오기</button>
+          </div>
+        </div>
+
+        <div id="editor">
+          <div class="section stylesets">
+            <p class="title">믹스타입 편집</p>
+
+            <!--div class="table select">
+              <div class="line label">
+                <div class="cell select">믹스타입</div>
+                <div class="cell create">
+                  <button>새 믹스타입 만들기</button>
+                </div>
+              </div>
+              <div class="values">
+                <div class="line value">
+                  <div class="cell select">
+                    <select>
+                      <option>사용자 지정</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div-->
+
+            <div class="table name">
+              <div class="line label">
+                <div class="cell name">이름</div>
+              </div>
+              <div class="values">
+                <div class="line value">
+                  <div class="cell name">
+                    <input id="input-stylesets-name" type="text" size="1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prestyles">
+              <div class="label">전처리 스타일 CSS</div>
+              <textarea id="prestyles" spellcheck="false"></textarea>
+            </div>
+          </div>
+
+          <div class="section styles">
+            <p class="title">스타일 편집</p>
+
+            <div class="table">
+              <div class="line label">
+                <div class="cell name">이름</div>
+                <div class="cell matcher">문자</div>
+                <div class="cell font">서체</div>
+                <div class="cell size">크기</div>
+                <div class="cell offset">기준선</div>
+                <div class="cell weight">굵기</div>
+                <div class="cell control"></div>
+              </div>
+
+              <div class="values" id="styleset-styles">
+                <div class="line value">
+                  <div class="cell name">
+                    <input type="text" size="1" />
+                  </div>
+                  <div class="cell matcher">
+                    <select>
+                      <option>사용자 지정</option>
+                    </select>
+                    <input type="text" size="1" />
+                  </div>
+                  <div class="cell font">
+                    <input type="text" size="1" />
+                  </div>
+                  <div class="cell size">
+                    <input type="text" size="1" />
+                  </div>
+                  <div class="cell offset">
+                    <input type="text" size="1" />
+                  </div>
+                  <div class="cell weight">
+                    <input type="text" size="1" />
+                  </div>
+                  <div class="cell control">
+                    <button>↑</button>
+                    <button>↓</button>
+                    <button>✕</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="preview">
+          <div class="display">
+            <div class="title">미리보기</div>
+            <div class="screen">
+              <div class="guide baseline"></div>
+              <div class="guide lineheight"></div>
+              <div class="sample">
+                <p id="display-sample"></p>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <div class="textarea">
+              <div class="sample">
+                <div class="label">미리보기 내용</div>
+                <textarea id="control-sample" spellcheck="false"></textarea>
+              </div>
+            </div>
+
+            <div class="range">
+              <div id="font-size" class="rangeset">
+                <div class="text">
+                  <div class="label">폰트 크기</div>
+                  <div class="value"></div>
+                </div>
+                <div class="input">
+                  <input type="range" min="6" max="320" value="36" step="1" />
+                </div>
+              </div>
+              <div id="line-height" class="rangeset">
+                <div class="text">
+                  <div class="label">줄 간격</div>
+                  <div class="value"></div>
+                </div>
+                <div class="input">
+                  <input type="range" min="50" max="300" value="160" step="1" />
+                </div>
+              </div>
+            </div>
+
+            <div class="check"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

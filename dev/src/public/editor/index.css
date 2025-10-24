@@ -1,0 +1,361 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(150, 150, 150);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard';
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  width: 100%;
+  height: 100svh;
+}
+
+#mixtype {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: solid 1px black;
+  background: rgb(245, 245, 245);
+}
+#mixtype > .title {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 1.5rem;
+  border-bottom: solid 1px black;
+  background: rgb(210, 210, 210);
+}
+#mixtype > .title .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.75rem;
+  background: black;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+#mixtype > .title .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+#mixtype > .title .buttons button {
+  border: none;
+  margin: 0;
+  padding: 0 0.75rem;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-left: solid 1px black;
+  background: rgb(210, 210, 210);
+  cursor: pointer;
+}
+#mixtype > .title .buttons button:hover {
+  background: black;
+  color: white;
+}
+
+#editor {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30%;
+  border-bottom: solid 1px black;
+}
+#editor .section {
+  padding: 0.75rem;
+}
+#editor .section .title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 1.25rem;
+}
+#editor .table {
+  border-top: solid 1px black;
+}
+#editor .table .line {
+  display: flex;
+  width: 100%;
+  height: 1.5rem;
+  font-size: 0.8rem;
+  border-bottom: dotted 1px black;
+}
+#editor .table .line.label {
+  border-bottom: dashed 1px black;
+  font-weight: 700;
+}
+#editor .table .line > .cell {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding-right: 0.75rem;
+}
+#editor .table .line > .cell:last-child {
+  padding-right: 0;
+}
+#editor .table .line > .cell input {
+  flex: 1;
+  background: transparent;
+  height: 1.25rem;
+  border: none;
+  border-bottom: solid 1px rgb(180, 180, 180);
+}
+#editor .table .line > .cell select {
+  background: transparent;
+  height: 1.25rem;
+  border: solid 1px rgb(180, 180, 180);
+}
+#editor .table .line > .cell button {
+  height: 1.25rem;
+  margin: 0;
+  padding: 0 0.325rem;
+  border: none;
+  border: solid 1px rgb(180, 180, 180);
+  background: transparent;
+  cursor: pointer;
+}
+#editor .table .line > .cell button:hover {
+  background: black;
+  border-color: black;
+  color: white;
+}
+#editor .table .values {
+  height: calc(100% - 1.5rem);
+  overflow-y: scroll;
+}
+
+#editor .stylesets {
+  width: 25%;
+  height: 100%;
+  border-right: solid 1px black;
+  display: flex;
+  flex-direction: column;
+}
+#editor .stylesets .line:last-child {
+  border-bottom: solid 1px black;
+}
+#editor .stylesets .label .cell.select {
+  flex: 1;
+}
+#editor .stylesets .label .cell.create {
+  width: 8rem;
+  display: flex;
+  justify-content: flex-end;
+}
+#editor .stylesets .values .cell.select {
+  width: 100%;
+}
+#editor .stylesets .values .cell.select select {
+  width: 100%;
+}
+#editor .stylesets .cell.name {
+  width: 100%;
+}
+#editor .prestyles {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+}
+#editor .prestyles .label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#editor .prestyles textarea {
+  width: 100%;
+  flex: 1;
+  resize: none;
+  overflow-y: scroll;
+  border: solid 1px black;
+  background: transparent;
+  border-radius: 0;
+}
+
+#editor .styles {
+  width: 75%;
+  height: 100%;
+}
+#editor .styles .table {
+  border-bottom: solid 1px black;
+  height: calc(100% - 1.25rem);
+}
+#editor .styles .line.add {
+  height: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: none;
+}
+#editor .styles .cell.name {
+  width: calc((100% - 4.075rem) * 0.15);
+}
+#editor .styles .cell.matcher {
+  width: calc((100% - 4.075rem) * 0.35);
+}
+#editor .styles .cell.matcher select {
+  margin-right: 0.325rem;
+}
+#editor .styles .cell.font {
+  width: calc((100% - 4.075rem) * 0.2);
+}
+#editor .styles .cell.size {
+  width: calc((100% - 4.075rem) * 0.1);
+}
+#editor .styles .cell.offset {
+  width: calc((100% - 4.075rem) * 0.1);
+}
+#editor .styles .cell.weight {
+  width: calc((100% - 4.075rem) * 0.1);
+}
+#editor .styles .cell.control {
+  width: 4.075rem;
+  justify-content: flex-end;
+  gap: 0.1625rem;
+}
+#editor .styles .cell.control button {
+  padding: 0;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+}
+#editor .styles .cell.add {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#preview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+}
+#preview > .display {
+  width: 100%;
+  flex: 1;
+  padding: 0.75rem;
+
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+#preview > .display > .title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 1.25rem;
+}
+#preview > .display > .screen {
+  position: relative;
+  border: solid 1px black;
+  flex: 1;
+  overflow: auto;
+}
+#preview > .display > .screen > .guide,
+#preview > .display > .screen > .sample {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#preview > .control {
+  display: flex;
+}
+#preview > .control .textarea {
+  width: 25%;
+  padding: 0.75rem;
+}
+#preview > .control .range {
+  width: 50%;
+  padding: 0.75rem;
+}
+#preview > .control .check {
+  width: 25%;
+  padding: 0.75rem;
+}
+
+.rangeset:first-child {
+  margin-bottom: 1.5rem;
+}
+.rangeset .text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rangeset .input {
+  width: 100%;
+  height: 1.5rem;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+}
+.rangeset .input input {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+}
+.rangeset .input input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: black;
+}
+.rangeset .input input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.6rem;
+  background: rgb(245, 245, 245);
+  cursor: pointer;
+  border: solid 1px black;
+  border-radius: 100%;
+}
+.rangeset .input input[type='range']:active::-webkit-slider-thumb {
+  background: black;
+}
+#preview .control .sample {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#preview .control .sample .label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#preview .control .sample textarea {
+  width: 100%;
+  flex: 1;
+  resize: none;
+  overflow-y: scroll;
+  border: solid 1px black;
+  background: transparent;
+  border-radius: 0;
+}

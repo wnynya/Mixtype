@@ -1,0 +1,25 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "author": "Sungwan Jo <sung@wanyne.com> (https://wanyne.com)",
+  "description": "",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js -p 2980",
+    "dev": "nodemon src/app.js -p 2980 -dev"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "*",
+      "../wanyne.com-data"
+    ],
+    "ignore": [
+      "./src/public"
+    ],
+    "ext": "js,mjs,json,html,css,txt"
+  }
+}
